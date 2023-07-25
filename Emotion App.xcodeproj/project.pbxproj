@@ -14,6 +14,7 @@
 		239003D62A6FBAD700D968F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239003D52A6FBAD700D968F0 /* Assets.xcassets */; };
 		239003D92A6FBAD700D968F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239003D72A6FBAD700D968F0 /* LaunchScreen.storyboard */; };
 		239003E12A700D6700D968F0 /* EmotionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239003E02A700D6700D968F0 /* EmotionEnum.swift */; };
+		239003E32A7011E300D968F0 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239003E22A7011E300D968F0 /* StatisticsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		239003D82A6FBAD700D968F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		239003DA2A6FBAD700D968F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		239003E02A700D6700D968F0 /* EmotionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionEnum.swift; sourceTree = "<group>"; };
+		239003E22A7011E300D968F0 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,10 @@
 			children = (
 				239003CC2A6FBAD400D968F0 /* AppDelegate.swift */,
 				239003CE2A6FBAD400D968F0 /* SceneDelegate.swift */,
-				239003D02A6FBAD400D968F0 /* ViewController.swift */,
 				239003E02A700D6700D968F0 /* EmotionEnum.swift */,
 				239003D22A6FBAD400D968F0 /* Main.storyboard */,
+				239003D02A6FBAD400D968F0 /* ViewController.swift */,
+				239003E22A7011E300D968F0 /* StatisticsViewController.swift */,
 				239003D52A6FBAD700D968F0 /* Assets.xcassets */,
 				239003D72A6FBAD700D968F0 /* LaunchScreen.storyboard */,
 				239003DA2A6FBAD700D968F0 /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239003E12A700D6700D968F0 /* EmotionEnum.swift in Sources */,
+				239003E32A7011E300D968F0 /* StatisticsViewController.swift in Sources */,
 				239003D12A6FBAD400D968F0 /* ViewController.swift in Sources */,
 				239003CD2A6FBAD400D968F0 /* AppDelegate.swift in Sources */,
 				239003CF2A6FBAD400D968F0 /* SceneDelegate.swift in Sources */,
