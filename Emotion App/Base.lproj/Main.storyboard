@@ -73,12 +73,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wA3-5b-icL"/>
+                    <connections>
+                        <outletCollection property="emotionButtons" destination="kym-hv-ocr" collectionClass="NSMutableArray" id="YVH-Fd-wmE"/>
+                        <outletCollection property="emotionButtons" destination="FDl-g2-TgC" collectionClass="NSMutableArray" id="Hf4-bU-dqL"/>
+                        <outletCollection property="emotionButtons" destination="iTE-hP-yQg" collectionClass="NSMutableArray" id="Vr3-vX-8MG"/>
+                        <outletCollection property="emotionButtons" destination="wPQ-o4-Fc0" collectionClass="NSMutableArray" id="DOl-RG-2w1"/>
+                        <outletCollection property="emotionButtons" destination="uVu-86-6Eq" collectionClass="NSMutableArray" id="84P-Fv-A0y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2220.6106870229005" y="-389.43661971830988"/>
         </scene>
-        <!--Item-->
+        <!--통계보기-->
         <scene sceneID="uu7-NO-S4w">
             <objects>
                 <viewController id="srH-r3-Wvk" sceneMemberID="viewController">
@@ -88,7 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="80d-da-GF0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="xu7-we-7DG"/>
+                    <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="xu7-we-7DG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxo-ir-aks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,11 +119,11 @@
             </objects>
             <point key="canvasLocation" x="135" y="-61"/>
         </scene>
-        <!--Item-->
+        <!--작성하기-->
         <scene sceneID="FQ1-LC-9Hl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hma-Kx-d0E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l8g-ah-TRe"/>
+                    <tabBarItem key="tabBarItem" title="작성하기" image="square.and.pencil" catalog="system" id="l8g-ah-TRe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X0t-cZ-1dF">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -133,6 +140,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart.bar" catalog="system" width="128" height="89"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
