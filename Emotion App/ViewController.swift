@@ -8,12 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    //버튼을 누르면, 클릭 수가 증가
+    @IBAction func emotionButton(_ sender: UIButton) {
+        
+        count = count + 1
+        print(count)
+        
+    }
+    
 }
 
