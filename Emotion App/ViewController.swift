@@ -9,18 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var count = 0
+    //버튼마다 초기 값 필요. a버튼에 0 b버튼에 0 ...
+    var buttonCount: [Int] = [0, 0, 0, 0, 0]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
     
     //버튼을 누르면, 클릭 수가 증가
     @IBAction func emotionButton(_ sender: UIButton) {
+                
+        buttonCount[sender.tag] = buttonCount[sender.tag] + 1
         
-        count = count + 1
-        print(count)
+        print(buttonCount[sender.tag])
         
     }
     
