@@ -12,6 +12,8 @@ class StatisticsViewController: UIViewController {
     @IBOutlet var backgroundView: [UIView]!
     @IBOutlet var titleLabels: [UILabel]!
     
+    let colorList: [UIColor] = [.systemPink, .orange, .yellow, .green, .blue]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,18 +30,13 @@ class StatisticsViewController: UIViewController {
     
     func designView() {
         for (index, view) in backgroundView.enumerated() {
-            view.backgroundColor = colorList()[index]
+            view.backgroundColor = colorList[index]
             view.layer.cornerRadius = 20
             view.layer.shadowOffset = CGSize(width: 1, height: 1)
             view.layer.shadowColor = UIColor.lightGray.cgColor
             view.layer.shadowOpacity = 0.3
             view.layer.shadowRadius = 2
         }
-    }
-    
-    func colorList() -> [UIColor] {
-        let colorList: [UIColor] = [.systemPink, .orange, .yellow, .green, .blue]
-        return colorList
     }
 
 }
