@@ -32,16 +32,21 @@ class ViewController: UIViewController {
         let tag = sender.tag
         count[tag] += 1
         
+        saveValue(EmotionRawValue: tag, keyValue: count[tag])
+    }
+    
+    //저장
+    func saveValue(EmotionRawValue: Int, keyValue: Int) {
         //1. 버튼을 누르면 저장
-        guard let emotion = Emotions(rawValue: tag) else {
+        guard let emotion = Emotions(rawValue: EmotionRawValue) else {
             print("버튼의 태그 값에 nil 들어갈 수 있다.")
             return
         }
 
         switch emotion {
         case .완전행복, .적당미소, .그냥그냥, .좀속상한, .많이슬픈:
-            UserDefaults.standard.set(count[tag], forKey: "\(emotion)")
-//            print("\(emotion)지수는 \(UserDefaults.standard.integer(forKey: "\(emotion)"))점")
+            UserDefaults.standard.set(keyValue, forKey: "\(emotion)")
+            print("\(emotion)지수는 \(UserDefaults.standard.integer(forKey: "\(emotion)"))점")
         }
         
 //        //5. if 버전
@@ -51,7 +56,6 @@ class ViewController: UIViewController {
 //        } else {
 //            print("버튼 태그 확인")
 //        }
-
     }
     
     //불러오기
