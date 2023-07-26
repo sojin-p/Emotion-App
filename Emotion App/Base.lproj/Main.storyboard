@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--OH MY MOOD-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emotion_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OqW-yc-NYU" secondAttribute="bottom" id="pfm-Tr-ovs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wA3-5b-icL"/>
+                    <navigationItem key="navigationItem" title="OH MY MOOD" id="wA3-5b-icL"/>
                     <connections>
                         <outletCollection property="emotionButtons" destination="kym-hv-ocr" collectionClass="NSMutableArray" id="YVH-Fd-wmE"/>
                         <outletCollection property="emotionButtons" destination="FDl-g2-TgC" collectionClass="NSMutableArray" id="Hf4-bU-dqL"/>
@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="2220.6106870229005" y="-389.43661971830988"/>
         </scene>
-        <!--Statistics View Controller-->
+        <!--OH MY MOOD-->
         <scene sceneID="uu7-NO-S4w">
             <objects>
                 <viewController id="srH-r3-Wvk" customClass="StatisticsViewController" customModule="Emotion_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -254,7 +254,7 @@
                             <constraint firstItem="Bw3-9o-zvi" firstAttribute="height" secondItem="vlZ-hF-Njg" secondAttribute="height" multiplier="0.6" id="ucK-Qe-zVB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="346-cT-9e5"/>
+                    <navigationItem key="navigationItem" title="OH MY MOOD" id="346-cT-9e5"/>
                     <connections>
                         <outletCollection property="backgroundView" destination="dkO-xq-kRh" collectionClass="NSMutableArray" id="wyq-Oh-jVh"/>
                         <outletCollection property="backgroundView" destination="bkq-Km-89v" collectionClass="NSMutableArray" id="jMr-V1-1N3"/>
@@ -266,6 +266,11 @@
                         <outletCollection property="titleLabels" destination="Mu2-6v-ssl" collectionClass="NSMutableArray" id="loU-O8-Cpm"/>
                         <outletCollection property="titleLabels" destination="06s-EC-EZl" collectionClass="NSMutableArray" id="s4o-ef-6Pc"/>
                         <outletCollection property="titleLabels" destination="ydf-O2-ojm" collectionClass="NSMutableArray" id="WnF-D7-xiU"/>
+                        <outletCollection property="resultLabels" destination="0Me-F6-xry" collectionClass="NSMutableArray" id="Nn9-qv-t4D"/>
+                        <outletCollection property="resultLabels" destination="vJ8-dG-3uO" collectionClass="NSMutableArray" id="y5p-Q7-dhe"/>
+                        <outletCollection property="resultLabels" destination="PgV-KV-wxB" collectionClass="NSMutableArray" id="s3V-us-No9"/>
+                        <outletCollection property="resultLabels" destination="1cS-Mf-gwk" collectionClass="NSMutableArray" id="P7S-cE-sJH"/>
+                        <outletCollection property="resultLabels" destination="MfK-9k-yXM" collectionClass="NSMutableArray" id="5eO-vk-Xmq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxo-ir-aks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
