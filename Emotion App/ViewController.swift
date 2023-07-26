@@ -12,83 +12,70 @@ class ViewController: UIViewController {
     @IBOutlet var emotionButtons: [UIButton]!
     
     //버튼마다 초기 값 필요. a버튼에 0 b버튼에 0 ...
-    var buttonCount: [Int] = [0, 0, 0, 0, 0]
+    var count: [Int] = [0, 0, 0, 0, 0]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         designEmotionButton()
         
+        reloadCount()
+//        UserDefaults.standard.removeObject(forKey: "완전행복")
+//        UserDefaults.standard.removeObject(forKey: "적당미소")
+//        UserDefaults.standard.removeObject(forKey: "그냥그냥")
+//        UserDefaults.standard.removeObject(forKey: "좀속상한")
+//        UserDefaults.standard.removeObject(forKey: "많이슬픈")
     }
     
-    //버튼을 누르면, 클릭 수가 증가
+    //버튼을 누르면, 클릭 수가 증가 후 저장
     @IBAction func emotionButton(_ sender: UIButton) {
+        let tag = sender.tag
+        count[tag] += 1
         
-        //차근 차근 Enum적용 해보기
-        //3번 열거형(Enum)의 rawValue 활용
-        guard let value = Emotion(rawValue: sender.tag) else {
-            print("오류")
+        //1. 버튼을 누르면 저장
+        guard let emotion = Emotions(rawValue: tag) else {
+            print("버튼의 태그 값에 nil 들어갈 수 있다.")
             return
         }
-        
-        let tag = sender.tag
-        buttonCount[tag] += 1
-        
-        switch value {
-        case .완전행복: print("\(buttonCount[tag])점")
-        case .적당미소: print("\(buttonCount[tag])점")
-        case .그냥그냥: print("\(buttonCount[tag])점")
-        case .좀속상한: print("\(buttonCount[tag])점")
-        case .많이슬픈: print("\(buttonCount[tag])점")
+
+        switch emotion {
+        case .완전행복, .적당미소, .그냥그냥, .좀속상한, .많이슬픈:
+            UserDefaults.standard.set(count[tag], forKey: "\(emotion)")
+//            print("\(emotion)지수는 \(UserDefaults.standard.integer(forKey: "\(emotion)"))점")
         }
         
-        //2번 스위치로 바꿔보기
-//        let tag = sender.tag
-//        switch tag {
-//        case Emotion.완전행복.rawValue:
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        case Emotion.적당미소.rawValue:
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        case Emotion.그냥그냥.rawValue:
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        case Emotion.좀속상한.rawValue:
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        case Emotion.많이슬픈.rawValue:
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        default:
-//            print("오류")
-//        }
-        
-        //1번 조건문
-//        let tag = sender.tag
-//        if tag == Emotion.완전행복.rawValue {
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        } else if tag == Emotion.적당미소.rawValue {
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        } else if tag == Emotion.그냥그냥.rawValue {
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        } else if tag == Emotion.좀속상한.rawValue {
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
-//        } else if tag == Emotion.많이슬픈.rawValue {
-//            buttonCount[tag] = buttonCount[tag] + 1
-//            print("\(buttonCount[tag])점")
+//        //5. if 버전
+//        if let emotion = Emotions(rawValue: tag) {
+//            UserDefaults.standard.set(count[tag], forKey: "\(emotion)")
+//            //print("\(emotion)지수는 \(UserDefaults.standard.integer(forKey: "\(emotion)"))점")
 //        } else {
-//            print("오류")
+//            print("버튼 태그 확인")
 //        }
-                
+
+    }
+    
+    //불러오기
+    func reloadCount() {
+        //4. enum.allcases 이용
+        for emotion in emotionList {
+            let sevedCount = UserDefaults.standard.integer(forKey: "\(emotion)") //불러 오기
+            count[emotion.rawValue] = sevedCount //불러온 값을 카운트 배열에 넣기
+//            print("\(count[emotion.rawValue])점")
+        }
         
-//        //기존에 쓴 코드
-//        buttonCount[sender.tag] += 1
-//        print(buttonCount[sender.tag])
+//        //2. 앱을 키면 저장한걸 불러온다. - 뷰디드로드에 쓰려고 보니 길어서 함수로
+//        let happyCount = UserDefaults.standard.integer(forKey: "\(Emotion.완전행복)")
+//        let smileCount = UserDefaults.standard.integer(forKey: "\(Emotion.적당미소)")
+//        let sosoCount = UserDefaults.standard.integer(forKey: "\(Emotion.그냥그냥)")
+//        let upsetCount = UserDefaults.standard.integer(forKey: "\(Emotion.좀속상한)")
+//        let sadCount = UserDefaults.standard.integer(forKey: "\(Emotion.많이슬픈)")
+//
+//        //3. 불러온 카운트를 초기 카운트에 다시 넣기
+//        count[Emotion.완전행복.rawValue] = happyCount
+//        count[Emotion.적당미소.rawValue] = smileCount
+//        count[Emotion.그냥그냥.rawValue] = sosoCount
+//        count[Emotion.좀속상한.rawValue] = upsetCount
+//        count[Emotion.많이슬픈.rawValue] = sadCount
         
     }
     

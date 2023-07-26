@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Emotion: Int, CaseIterable {
+enum Emotions: Int, CaseIterable {
     case 완전행복
     case 적당미소
     case 그냥그냥
@@ -16,4 +16,4 @@ enum Emotion: Int, CaseIterable {
 }
 
 //enum을 배열처럼
-var emotionList = Emotion.allCases
+var emotionList = Emotions.allCases

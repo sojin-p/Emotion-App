@@ -24,6 +24,11 @@ class StatisticsViewController: UIViewController {
 
     func designTitleLabel() {
         for (index, title) in titleLabels.enumerated() {
+            switch title.tag {
+            case 0, 4: title.textColor = .white
+            default:
+                title.textColor = .black
+            }
             title.text = "\(emotionList[index])지수"
         }
     }
