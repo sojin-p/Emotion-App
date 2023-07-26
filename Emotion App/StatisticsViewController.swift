@@ -10,12 +10,20 @@ import UIKit
 class StatisticsViewController: UIViewController {
 
     @IBOutlet var backgroundView: [UIView]!
+    @IBOutlet var titleLabels: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         designView()
+        designTitleLabel()
 
+    }
+
+    func designTitleLabel() {
+        for (index, title) in titleLabels.enumerated() {
+            title.text = "\(emotionList[index])지수"
+        }
     }
     
     func designView() {

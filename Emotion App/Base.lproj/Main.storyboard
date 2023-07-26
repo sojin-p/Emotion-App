@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bw3-9o-zvi">
-                                <rect key="frame" x="20" y="170.33333333333334" width="353" height="511.33333333333314"/>
+                                <rect key="frame" x="20" y="170.33333333333334" width="353" height="511.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkO-xq-kRh">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="85.666666666666671"/>
@@ -261,6 +261,11 @@
                         <outletCollection property="backgroundView" destination="I7w-Bd-9yb" collectionClass="NSMutableArray" id="Wec-jF-Gwx"/>
                         <outletCollection property="backgroundView" destination="CyT-tP-zd0" collectionClass="NSMutableArray" id="yDO-6j-ybb"/>
                         <outletCollection property="backgroundView" destination="A7k-pm-vKo" collectionClass="NSMutableArray" id="XbA-2s-4Rb"/>
+                        <outletCollection property="titleLabels" destination="kWd-8S-xch" collectionClass="NSMutableArray" id="FHf-F2-BXG"/>
+                        <outletCollection property="titleLabels" destination="XRW-JW-VxW" collectionClass="NSMutableArray" id="50J-qg-3fp"/>
+                        <outletCollection property="titleLabels" destination="Mu2-6v-ssl" collectionClass="NSMutableArray" id="loU-O8-Cpm"/>
+                        <outletCollection property="titleLabels" destination="06s-EC-EZl" collectionClass="NSMutableArray" id="s4o-ef-6Pc"/>
+                        <outletCollection property="titleLabels" destination="ydf-O2-ojm" collectionClass="NSMutableArray" id="WnF-D7-xiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxo-ir-aks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

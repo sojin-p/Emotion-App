@@ -13,9 +13,6 @@ class ViewController: UIViewController {
     
     //버튼마다 초기 값 필요. a버튼에 0 b버튼에 0 ...
     var buttonCount: [Int] = [0, 0, 0, 0, 0]
-    
-    //enum을 배열처럼
-    var emotionList = Emotion.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +34,19 @@ class ViewController: UIViewController {
         //이넘 배열 인덱스(버튼.태그) 접근했을 때
         for button in emotionButtons {
             switch emotionList[button.tag] {
-            case .happy:
+            case .완전행복:
                 button.layer.backgroundColor = UIColor.systemPink.cgColor
                 button.setImage(UIImage(named: "emoji1"), for: .normal)
-            case .smile :
+            case .적당미소 :
                 button.layer.backgroundColor = UIColor.orange.cgColor
                 button.setImage(UIImage(named: "emoji2"), for: .normal)
-            case .soso :
+            case .그냥그냥 :
                 button.layer.backgroundColor = UIColor.yellow.cgColor
                 button.setImage(UIImage(named: "emoji3"), for: .normal)
-            case .upset:
+            case .좀속상한:
                 button.layer.backgroundColor = UIColor.green.cgColor
                 button.setImage(UIImage(named: "emoji4"), for: .normal)
-            case .sad :
+            case .많이슬픈 :
                 button.layer.backgroundColor = UIColor.blue.cgColor
                 button.setImage(UIImage(named: "emoji5"), for: .normal)
             }

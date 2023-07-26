@@ -8,9 +8,12 @@
 import Foundation
 
 enum Emotion: Int, CaseIterable {
-    case happy
-    case smile
-    case soso
-    case upset
-    case sad
+    case 완전행복
+    case 적당미소
+    case 그냥그냥
+    case 좀속상한
+    case 많이슬픈
 }
+
+//enum을 배열처럼
+var emotionList = Emotion.allCases
