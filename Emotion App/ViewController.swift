@@ -27,8 +27,16 @@ class ViewController: UIViewController {
 //        userdefault.removeObject(forKey: "많이슬픈")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadCount()
+        
+    }
+    
     //버튼을 누르면, 클릭 수가 증가 후 저장
     @IBAction func emotionButton(_ sender: UIButton) {
+        
         let tag = sender.tag
         count[tag] += 1
         
@@ -38,19 +46,14 @@ class ViewController: UIViewController {
         
     }
     
-//    //저장
-//    func saveValue(index: Int, value: Int) {
-//        //1. 버튼을 누르면 저장
-//        guard let emotion = Emotions(rawValue: index) else {
-//            print("버튼의 태그 값에 nil 들어갈 수 있다.")
-//            return
-//        }
-//
-//        userdefault.set(value, forKey: "\(emotion)")
-//
-//        print("\(emotion)지수는 \(userdefault.integer(forKey: "\(emotion)"))점")
-//
-//    }
+    //불러오기
+    func loadCount() {
+        for (index, emotion) in emotionList.enumerated() {
+            let value = userdefault.integer(forKey: "\(emotion)")
+//            print(userdefault.integer(forKey: "\(emotion)")) //들어가있는 값
+            count[index] = value
+        }
+    }
     
     //버튼 디자인
     func designEmotionButton() {
