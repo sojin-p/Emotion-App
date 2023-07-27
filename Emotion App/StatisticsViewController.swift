@@ -14,6 +14,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet var resultLabels: [UILabel]!
     
     let colorList: [UIColor] = [.systemPink, .orange, .yellow, .green, .blue]
+    let userdefault = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,22 @@ class StatisticsViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadCount()
+        
+    }
+    
+    //불러오기
+    func reloadCount() {
+        for (index, emotion) in emotionList.enumerated() {
+            let savedCount = userdefault.integer(forKey: "\(emotion)")
+            resultLabels[index].text = "\(savedCount)점"
+        }
+    
+    }
+    
     func designResultLabel() {
         for (index, resultLabel) in resultLabels.enumerated() {
             switch index {
@@ -31,7 +48,6 @@ class StatisticsViewController: UIViewController {
             default:
                 resultLabel.textColor = .black
             }
-            resultLabel.text = "점"
             resultLabel.textAlignment = .right
             resultLabel.font = UIFont.systemFont(ofSize: 30)
         }
