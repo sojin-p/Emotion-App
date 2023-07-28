@@ -19,19 +19,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         designEmotionButton()
+        loadCount()
         
 //        userdefault.removeObject(forKey: "완전행복")
 //        userdefault.removeObject(forKey: "적당미소")
 //        userdefault.removeObject(forKey: "그냥그냥")
 //        userdefault.removeObject(forKey: "좀속상한")
 //        userdefault.removeObject(forKey: "많이슬픈")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        loadCount()
-        
     }
     
     //버튼을 누르면, 클릭 수가 증가 후 저장
